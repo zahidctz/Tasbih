@@ -380,6 +380,9 @@
             animation: toastIn 0.3s ease forwards, toastOut 0.3s ease 2.7s forwards;
             font-weight: 600;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            max-width: 90%;
+            word-wrap: break-word;
         }
 
         @keyframes toastIn {
@@ -437,6 +440,13 @@
             .increment,
             .reset {
                 grid-column: auto;
+            }
+
+            .toast {
+                bottom: 20px;
+                right: auto;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     </style>
@@ -545,7 +555,7 @@
                 localStorage.setItem("tasbihGoal", goal);
                 updateDisplay();
                 input.value = "";
-                showToast(`✨ Goal set to ${goal}!`);
+                DER(`✨ Goal set to ${goal}!`);
             } else {
                 showToast("Please enter a valid goal (1-10000)");
             }
