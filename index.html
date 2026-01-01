@@ -595,6 +595,8 @@
             const t = document.createElement("div");
             t.className = "toast";
             t.textContent = msg;
+            t.style.position = "fixed";
+            t.style.zIndex = "99999";
             document.body.appendChild(t);
             setTimeout(() => t.remove(), 3000);
         }
