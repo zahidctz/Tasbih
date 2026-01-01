@@ -570,7 +570,7 @@
             localStorage.setItem("tasbihTotalCount", totalCount);
             updateDisplay();
             createRipple(event);
-            showMilestone();
+            // showMilestone(); // disabled per user request
         }
 
         // preset function removed
@@ -585,10 +585,9 @@
         }
 
         function showMilestone() {
-            const milestones = [10, 33, 50, 99, 100, 500, 1000];
-            if (milestones.includes(count)) {
-                showToast(`🎉 Milestone: ${count}!`);
-            }
+            // Milestone notifications are disabled.
+            // To re-enable, restore the milestone array and call showToast when desired.
+            return;
         }
 
         function showToast(msg) {
